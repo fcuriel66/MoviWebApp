@@ -1,6 +1,8 @@
 from flask_sqlalchemy import SQLAlchemy
+#from sqlalchemy.orm import backref
 
-db = SQLAlchemy()
+db = SQLAlchemy()   # Define db as SQLAlchemy
+
 
 class User(db.Model):
     __tablename__ = 'users'
@@ -20,7 +22,7 @@ class Movie(db.Model):
     director = db.Column(db.String(100))
     year = db.Column(db.Integer, nullable=False)
     poster_url = db.Column(db.String(300))
-    # Foreign key
+    # Foreign key - users
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     # "SQL" type of relationship to users
     user = db.relationship('User', backref=db.backref('movies', lazy=True))

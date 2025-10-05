@@ -1,5 +1,4 @@
 from sqlalchemy.exc import SQLAlchemyError
-
 from models import db, User, Movie
 import requests
 import os
@@ -25,9 +24,11 @@ class DataManager:
             print(e)
             return None
 
+
     def get_users(self):
-        """Gets all users from database
-            Returns: all users or empty list if no users exist
+        """
+        Gets all users from database
+        Returns: all users or empty list if no users exist
         """
         try:
             return User.query.all()
@@ -35,16 +36,20 @@ class DataManager:
             print(f"Error while retrieving users: {e}")
             return []
 
+
     def get_movies(self, user_id: int) -> list[Movie]:
-        """Return all movies linked to a user or [] if not"""
+        """ Return all movies linked to a user or [] if not """
         try:
             return Movie.query.filter_by(user_id = user_id).all()
         except SQLAlchemyError as e:
-            print(f"Error while retrieving movies for movie: {user_id}: {e}")
+            print(f"Error while retrieving movies for user: {user_id}: {e}")
             return []
 
-    def add_movie(self, title: Movie, user_id: int) -> Movie:
-        """Add movie to database. Returns new movie or None."""
+
+    def add_movie(self, title, user_id: int) -> Movie:
+        """
+        Add movie to database. Returns new movie or None.
+        """
         try:
             response = requests.get(f'https://www.omdbapi.com/?t={title}&apikey={OMDB_API_KEY}')
             data = response.json() # jsonify response to be able to work with info as a dictionary
@@ -68,6 +73,7 @@ class DataManager:
             print(e)
             return None
 
+
     def update_movie(self, movie_id: int, user_id: int, new_title: str) -> Movie:
         """
         Update movie from database. Returns movie with updated title or None
@@ -85,8 +91,9 @@ class DataManager:
             print(f"Error while updating movie: {movie_id}: {e}")
             return None
 
+
     def delete_movie(self, movie_id:int, user_id:int) -> bool:
-        """Delete a movie only if linked to a user"""
+        """ Delete a movie only if linked to a user """
         try:
             movie = Movie.query.filter_by(id=movie_id, user_id=user_id).first()
             if movie:
