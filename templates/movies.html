@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fdo's Movies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+{% extends "base.html" %}
+{% block content %}
+<br><br><br><br><br>
+<a href="{{ url_for('index') }}" class="back-btn">Back to users</a>
+<h3>Movies for {{ user.name }}</h3>
+
+{% if movies %}
+    <div class="movies-container">
+    {% for movie in movies %}
+        <div class="movie-item">
+            <div class="movie-card">
+                <div class="poster-wrapper">
+                    <img src="{{ movie.poster_url }}" class="poster" alt="Poster of {{ movie.name }}" width="200" height="300"/>
+                </div>
+
+                <div class="movie-body">
+                     <h4 class="movie-title">{{ movie.name }}</h4>
+                     <p class="movie-text">Year: {{ movie.year }}</p>
+                     <p class="movie-text">Director: {{ movie.director }}</p>
+                </div>
+
+                <div class="movie-footer">
+                    <!-- Update Movie Title-->
+                    <form action="{{ url_for('update_movie', user_id=user.id, movie_id=movie.id) }}" method="post" class="update-form">
+                        <input type="text" name="new_title" placeholder="New title" class="input-text" required>
+                        <button type="submit" class="update-btn">Update</button>
+                    </form>
+
+                    <!-- Delete Movie -->
+                    <form action="{{ url_for('delete_movie',  user_id=user.id, movie_id=movie.id) }}" method="post" class="delete-form">
+                        <button type="submit" class="delete-btn">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% else %}
+    <p>No movies yet. Add one below!</p>
+{% endif %}
+
+
+<!-- Add New Movie -->
+<div class="add-movie mt-5 p-4">
+    <h4>🍿 Add New Movie</h4>
+    <form action="{{ url_for('add_movie', user_id=user.id) }}" method="post">
+        <input type="text" name="name" class="form-control movie-input" placeholder="Movie title" required>
+        <input type="text" name="year" class="form-control movie-input" placeholder="Year (optional)">
+        <button type="submit">➕ Add Movie</button>
+    </form>
+</div>
+
+
+
+<button class="carousel-nav left" onclick="scrollMovies(-1)">&#10094;</button>
+<button class="carousel-nav right" onclick="scrollMovies(1)">&#10095;</button>
+
+<script>
+function scrollMovies(direction) {
+  const container = document.querySelector('.movies-container');
+  const scrollAmount = 300; // adjust to control scroll distance
+  container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+}
+</script>
+{% endblock %}
+
+</body>
+</html>

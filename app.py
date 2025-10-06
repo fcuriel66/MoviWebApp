@@ -16,11 +16,6 @@ data_manager = DataManager() # Create an object of your DataManager class
 
 
 @app.route('/')
-def home():
-    return "Welcome to MoviWeb App!"
-
-
-@app.route('/')
 def index():
     users = data_manager.get_users()
     return render_template('index.html', users=users)
@@ -29,7 +24,7 @@ def index():
 @app.route('/users', methods=['POST'])
 def create_user():
     try:
-        name = request.form.get('name', '').strip()
+        name = request.form.get('user')
         if not name:
             return redirect(url_for('index'))
 
@@ -60,11 +55,7 @@ def add_movie(user_id):
         if not title:
             return redirect(url_for('get_movies', user_id=user_id))
 
-        #movie =
-        data_manager.add_movie(title, user_id)      ############
-        # if movie:
-        #     data_manager.add_movie(movie)
-
+        data_manager.add_movie(title, user_id)
         return redirect(url_for('get_movies', user_id=user_id))
     except Exception as e:
         print(f"Error in add_movie route: {e}")
@@ -90,16 +81,23 @@ def update_movie(user_id, movie_id):
 @app.route('/users/<int:user_id>/movies/<int:movie_id>/delete', methods=['POST'])
 def delete_movie(user_id, movie_id):
     """ Deletes movie """
-    data_manager.delete_movie(movie_id, user_id)
+    data_manager.delete_movie(user_id,movie_id)
     return redirect(url_for('get_movies', user_id=user_id))
+
 
 # Handles 404 error
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('Err404.html'), 404 #########
+    return render_template('Err404.html'), 404
+
+
+# Handles 500 error
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template('Err500.html'), 500
 
 
 if __name__ == '__main__':
-  # with app.app_context():
-  #   db.create_all()
+  with app.app_context():
+    db.create_all()
     app.run(debug=True)

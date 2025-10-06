@@ -15,10 +15,10 @@ class DataManager:
         Create/add user to database. Returns new user or None.
         """
         try:
-            new_user = User(name=name)
-            db.session.add(new_user)
+            user = User(name=name)
+            db.session.add(user)
             db.session.commit()
-            return new_user
+            return user
         except SQLAlchemyError as e:
             db.session.rollback()
             print(e)
@@ -92,12 +92,12 @@ class DataManager:
             return None
 
 
-    def delete_movie(self, movie_id:int, user_id:int) -> bool:
+    def delete_movie(self, user_id:int, movie_id:int) -> bool:
         """ Delete a movie only if linked to a user """
         try:
             movie = Movie.query.filter_by(id=movie_id, user_id=user_id).first()
             if movie:
-                db.session.delete()
+                db.session.delete(movie)
                 db.session.commit()
                 return  True
             else:

@@ -1,0 +1,230 @@
+/* ===== Reset & Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  padding-top: 80px;
+  padding-bottom: 120px;
+}
+
+/* ===== Fixed Header ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1976d2;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+/* ===== Movies Carousel ===== */
+.movies-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+}
+
+.movies-container::-webkit-scrollbar {
+  height: 10px;
+}
+.movies-container::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 5px;
+}
+
+.movie-item {
+  flex: 0 0 auto;
+}
+
+.movie-card {
+  width: 260px; /* widened from 220px */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+}
+
+.poster {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+}
+
+.movie-body {
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.movie-title {
+  margin: 0.3rem 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.movie-text {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ===== Footer (Update / Delete) ===== */
+.movie-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem;
+  width: 100%;
+  border-top: 1px solid #eee;
+}
+
+.movie-footer form {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.input-text {
+  flex: 1;
+  padding: 0.3rem 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.update-btn, .delete-btn {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.4rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.6rem;
+}
+
+.delete-btn {
+  background-color: #d32f2f;
+}
+
+.update-btn:hover {
+  background-color: #125ca1;
+}
+
+.delete-btn:hover {
+  background-color: #a61d1d;
+}
+
+/* ===== Carousel Navigation ===== */
+.carousel-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 900;
+  background-color: rgba(25, 118, 210, 0.8);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 50%;
+}
+
+.carousel-nav.left {
+  left: 10px;
+}
+.carousel-nav.right {
+  right: 10px;
+}
+
+.carousel-nav:hover {
+  background-color: rgba(18, 92, 161, 0.9);
+}
+
+/* ===== Add Movie Section (Compact Bottom Bar) ===== */
+.add-movie {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 -3px 6px rgba(0,0,0,0.15);
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 1000;
+}
+
+.add-movie h4 {
+  margin: 0;
+  color: #1976d2;
+  font-size: 1rem;
+}
+
+.add-movie form {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.add-movie input {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  width: 160px; /* same width for title/year inputs */
+}
+
+.add-movie button {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  transition: background-color 0.3s;
+}
+
+.add-movie button:hover {
+  background-color: #125ca1;
+}
+
+.back-btn {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 8px 14px;
+  background-color: #1e88e5;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #1565c0;
+}
+
+

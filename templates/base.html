@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Fernando's Movie Club</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <title>MovieApp</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
+  <header>
+    <h1>🎬 Cineteca</h1>
+    <p>Track and manage your favorite films</p>
+  </header>
 
-    <header>
-        <h1> MoviWebApp </h1>
-    </header>
 
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+        <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        © 2025 Cineteca WebApp.
+    </footer>
 
 </body>
 </html>
