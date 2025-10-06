@@ -227,4 +227,168 @@ header {
   background-color: #1565c0;
 }
 
+/* ===== INDEX PAGE STYLES ===== */
+
+/* Page Title */
+h3 {
+  font-size: 1.8em;
+  margin-top: 20px;
+  text-align: center;
+  color: #222;
+}
+
+/* User list container */
+.user-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Each user entry styled like a card */
+.user-entry {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  min-width: 180px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user-entry:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* Buttons for user entries */
+.user-entry .btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #1e88e5;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+/* === Add New User Section === */
+form[action*="create_user"] {
+  background: #ffffff;
+  padding: 20px 25px;
+  margin-top: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+form[action*="create_user"] h5 {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  color: #1e3a8a;
+}
+
+form[action*="create_user"] label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+form[action*="create_user"] input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 1em;
+  transition: border-color 0.2s ease;
+}
+
+form[action*="create_user"] input[type="text"]:focus {
+  border-color: #1e3a8a;
+  outline: none;
+}
+
+/* === Create User Button === */
+form[action*="create_user"] input[type="submit"] {
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form[action*="create_user"] input[type="submit"]:hover {
+  background-color: #3b82f6;
+}
+
+/* === Add New User Section  === */
+.add-user-form {
+  background: #ffffff;
+  padding: 14px 18px;           /* smaller padding */
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+  max-width: 300px;             /* narrower form */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.add-user-form h5 {
+  font-size: 1em;               /* slightly smaller heading */
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+.add-user-form label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+  text-align: left;
+  font-size: 0.9em;
+}
+
+.user-input {
+  width: 100%;
+  padding: 7px 8px;             /* smaller padding inside input */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  transition: border-color 0.2s ease;
+}
+
+.user-input:focus {
+  border-color: #1e3a8a;
+  outline: none;
+}
+
+.user-btn {
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 7px 14px;            /* smaller button */
+  border-radius: 6px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.user-btn:hover {
+  background-color: #3b82f6;
+}
+
 

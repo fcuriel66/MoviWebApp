@@ -19,12 +19,14 @@
 	    {% endfor %}
 	</ul>
 
-	<form action="{{ url_for('create_user') }}" method="post">
-		<h5>Add New User</h5>
-		<label for="user">User Name:</label>
-        <input type="text" id="user" name="user" required><br><br>
-		<input type="submit" value="Create User">
-    </form>
+
+	<form action="{{ url_for('create_user') }}" method="post" class="add-user-form">
+        <h5>Add New User</h5>
+        <label for="user">User Name:</label>
+        <input type="text" id="user" name="user" class="user-input" required><br><br>
+        <input type="submit" value="Create User" class="user-btn">
+	</form>
+
 
 
 {% endblock %}
