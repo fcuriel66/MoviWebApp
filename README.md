@@ -1,6 +1,6 @@
 # MoviWebApp
 
-MoviWebApp is a web application built with Flask that allows users to manage movie collections. Users can be created, movies can be added, updated, and deleted, and each user has their own movie list. The app uses JSON files for data persistence and supports a clean UI layout.
+MoviWebApp is a web application built with Flask that allows users to manage movie collections. Users can be created, movies can be added, updated, and deleted, and each user has their own movie list. The app uses SQLite files for data persistence and supports a clean UI layout.
 
 ---
 
@@ -9,7 +9,7 @@ MoviWebApp is a web application built with Flask that allows users to manage mov
 - User management: create, view, delete users  
 - Movie management per user: add, update, delete movies  
 - Responsive gallery-style layout for movie posters  
-- JSON-based storage (no database required)  
+- SQLite-based storage (SQL database )  
 - Clean, modern UI with fixed header/footer and scrolling movie carousel  
 - Separation between templates and static assets
 
@@ -18,21 +18,35 @@ MoviWebApp is a web application built with Flask that allows users to manage mov
 ## 📁 Project Structure
 
 MoviWebApp/
+
 ├── app.py
+
 ├── models.py
+
 ├── templates/
+
 │ ├── base.html
+
 │ ├── index.html
+
 │ ├── movies.html
+
 │ ├── add.html
+
 │ ├── update.html
+
 │ └── ...
+
 ├── static/
+
 │ └── style.css
+
 ├── data/
-│ └── users.json
-│ └── movies.json
+
+│ └── movies.db
+
 ├── requirements.txt
+
 └── README.md
 
 - `app.py` — main Flask application: routes, logic  
