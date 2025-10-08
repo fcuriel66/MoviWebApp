@@ -17,11 +17,11 @@ MoviWebApp is a web application built with Flask that allows users to manage mov
 ---
 
 ## 📁 Project Structure
-
+```
 MoviWebApp/
 
-├── app.py
-├── models.p
+├── app.py 
+├── models.p 
 ├── templates/
 │ ├── base.html
 │ ├── index.html
@@ -33,6 +33,7 @@ MoviWebApp/
 │ └── movies.db
 ├── requirements.txt
 └── README.md
+```
 
 - `app.py` — main Flask application: routes, logic
 - data_manager.py - Add, get, update and delete management of tables  
