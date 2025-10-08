@@ -21,9 +21,7 @@ MoviWebApp is a web application built with Flask that allows users to manage mov
 MoviWebApp/
 
 ├── app.py
-
-├── models.py
-
+├── models.p
 ├── templates/
 
 │ ├── base.html
