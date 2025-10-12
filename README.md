@@ -1,12 +1,14 @@
 # MoviWebApp
+<img width="1818" height="1732" alt="image" src="https://github.com/user-attachments/assets/41b5816c-af0e-447c-98ee-3d63e11d6f35" />
 
-MoviWebApp is a web application built with Flask that allows users to manage movie collections. Users can be created, movies can be added, updated, and deleted, and each user has their own movie list. The app uses SQLite files for data persistence and supports a clean UI layout. Movie metadata fetched from OMDb API.
+
+CINETECA is a Movie WebApp built with Flask that allows users to manage movie collections. Users can be created, movies can be added, updated, and deleted, and each user has their own movie list. The app uses SQLite files for data persistence and supports a clean UI layout. Movie metadata is fetched from the reliable OMDb API.
 
 ---
 
 ## 🚀 Features
 
-- User management: create, view, delete users  
+- User experience: create, view, delete users in a carrousel-like GUI 
 - Movie management per user: add, update, delete movies  
 - Responsive gallery-style layout for movie posters
 - Fetching of rellable movie metadata though OMDb API
