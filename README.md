@@ -2,7 +2,7 @@
 <img width="1818" height="1732" alt="image" src="https://github.com/user-attachments/assets/41b5816c-af0e-447c-98ee-3d63e11d6f35" />
 
 
-CINETECA is a Movie WebApp built with Flask that allows users to manage movie collections. Users can be created, movies can be added, updated, and deleted, and each user has their own movie list. The app uses SQLite files for data persistence and supports a clean UI layout. Movie metadata is fetched from the reliable OMDb API.
+CINETECA is a Movie WebApp built with Flask that allows users to manage movie collections. Users can be created, movies can be added, updated, and deleted, and each user has their own movie list. The app uses SQLite files for data persistence and supports a clean HTML/CSS/JS UI layout. Movie metadata is fetched from the reliable OMDb API.
 
 ---
 
@@ -13,7 +13,7 @@ CINETECA is a Movie WebApp built with Flask that allows users to manage movie co
 - Responsive gallery-style layout for movie posters
 - Fetching of rellable movie metadata though OMDb API
 - SQLite-based storage (SQL database)  
-- Clean, modern UI with fixed header/footer and scrolling movie carousel  
+- Clean, modern UI with fixed header/footer and scrolling movie carousel (HTML/CSS/JS)  
 - Separation between templates and static assets
 
 ---
